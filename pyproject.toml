@@ -17,8 +17,9 @@ dependencies = [
     "xgboost>=3.2.0",
 ]
 [tool.ruff]
-line-length = 88
+line-length = 120
 target-version = "py310"
+fix = true
 
 [tool.ruff.lint]
 select = ["E", "F", "I"]
