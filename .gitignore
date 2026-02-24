@@ -5,9 +5,12 @@ build/
 dist/
 wheels/
 *.egg-info
+dataset/
+data/images/
 
 # Virtual environments
 .venv
 .mypy*
+
 
 .DS_Store
