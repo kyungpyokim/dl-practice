@@ -5,6 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
+    "bing-image-downloader>=1.1.2",
     "folium>=0.20.0",
     "jupyter>=1.1.1",
     "koreanize-matplotlib>=0.1.1",
@@ -62,6 +63,7 @@ ignore = [
     "E501",
     "N803",
     'N812',
+    'E401',
 ]
 
 [tool.ruff.format]
