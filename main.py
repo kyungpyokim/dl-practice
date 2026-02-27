@@ -44,6 +44,7 @@ async def lifespan(app: FastAPI):
     print('====================== 모델 세팅 완료 ==============================')
     yield
     # Clean up the ML models and release the resources
+    print('서버 종료')
 
 
 app = FastAPI(lifespan=lifespan)

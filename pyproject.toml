@@ -16,6 +16,7 @@ dependencies = [
     "openpyxl>=3.1.5",
     "pandas>=3.0.0",
     "python-multipart>=0.0.22",
+    "requests>=2.32.5",
     "scikit-learn>=1.8.0",
     "seaborn>=0.13.2",
     "setuptools==69.5.1",
@@ -82,3 +83,11 @@ line-ending = "auto"
 
 [tool.mypy]
 ignore_missing_imports = true
+
+[dependency-groups]
+dev = [
+    "jupytext>=1.19.1",
+]
+
+[tool.jupytext]
+formats = "ipynb,py:percent"
