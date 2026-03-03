@@ -1,8 +1,10 @@
 from pathlib import Path
 
+from pyprojroot import here
+
 __all__ = ['model_file_path', 'data_file_path']
 
-base_path = Path.cwd().parent.parent
+root = here()
 
 # 현재 파일(노트북)의 위치를 기준으로 상위 부모 디렉토리로 이동
 # .parent를 두 번 사용하여 notebook/lecture -> notebook -> 루트로 이동
@@ -16,15 +18,21 @@ base_path = Path.cwd().parent.parent
 
 
 def model_file_path(file_name):
-    path = base_path / 'models'
-    return path / file_name
+    path = root / 'models'
+    Path.mkdir(path, parents=True, exist_ok=True)
+
+    return str(path / file_name)
 
 
 def data_file_path(file_name=None):
-    path = base_path / 'data'
+    path = root / 'data'
+    Path.mkdir(path, parents=True, exist_ok=True)
 
-    return path if file_name is None else path / file_name
+    return str(path if file_name is None else path / file_name)
 
 
 def output_path():
-    return base_path / 'output'
+    path = root / 'output'
+    Path.mkdir(path, parents=True, exist_ok=True)
+
+    return str(root / 'output')
