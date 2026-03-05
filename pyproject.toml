@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
     "bing-image-downloader>=1.1.2",
+    "cryptography>=46.0.5",
     "fastapi>=0.133.0",
     "folium>=0.20.0",
     "grad-cam>=1.5.5",
@@ -14,13 +15,14 @@ dependencies = [
     "matplotlib>=3.10.8",
     "numpy>=2.4.2",
     "openpyxl>=3.1.5",
-    "pandas>=3.0.0",
+    "pandas>=0.25,<3",
     "pyprojroot>=0.3.0",
     "python-multipart>=0.0.22",
     "requests>=2.32.5",
     "scikit-learn>=1.8.0",
     "seaborn>=0.13.2",
     "setuptools==69.5.1",
+    "streamlit>=1.22.0",
     "tensorboard>=2.20.0",
     "torch>=2.10.0",
     "torchaudio>=2.10.0",
@@ -82,9 +84,6 @@ line-ending = "auto"
 [tool.ruff.lint.per-file-ignores]
 "*.py" = ["ANN", "INP001"]
 
-[tool.mypy]
-ignore_missing_imports = true
-
 [dependency-groups]
 dev = [
     "jupytext>=1.19.1",
@@ -92,3 +91,12 @@ dev = [
 
 [tool.jupytext]
 formats = "ipynb,py:percent"
+
+[tool.mypy]
+# 모든 라이브러리의 타입 힌트 부재 허용
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "streamlit.*"
+ignore_missing_imports = true
+ignore_errors = true
