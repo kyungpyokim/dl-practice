@@ -13,5 +13,8 @@
       "notebook.source.organizeImports": "explicit"
     },
     "mypy.targets": ["."],
-    "mypy.runUsingActiveInterpreter": true
+    "mypy.runUsingActiveInterpreter": true,
+    "python.analysis.autoSearchPaths": true,
+    "python.analysis.extraPaths": [],
+    "python.analysis.indexing": true,
 }
